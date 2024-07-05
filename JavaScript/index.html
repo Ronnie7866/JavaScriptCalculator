@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prod = {
+    name : "T-shirt",
+    price : 1109,
+    company : 'Levis',
+    'delivery-time' : 'same day delivery',
+}
+console.log(prod['delivery-time']);
+
+
+    let obj = {
+        message : 'Good job',
+        status : 'Complete',
+    }
+    console.log(obj);
+
+    let {message, status} = obj;
+    console.log(message);
+    console.log(status);
+
+
+    function isIdenticalProduct(product1, product2) {
+        if(typeof(product1 !== 'object') || typeof(product2 !== 'object')) {
+            console.warn('Parameter passed was not an object');
+            return false;
+        }
+        if(product1 == product2) return true;
+
+        if(product1.name === product2.name && product1.company == product2.company) return true;
+        return false;
+    }   
+
+    let s = JSON.stringify(obj);
+    console.log(s)
+    console.log(JSON.parse(s));
+
+    </script>
+</body>
+</html>
