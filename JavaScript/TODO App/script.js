@@ -13,6 +13,7 @@ displayItems();
 function addTodo() {
     let inputElement = document.querySelector('#todo-input');
     let dateElement = document.querySelector('#todo-date');
+    console.log(inputElement);
     let todoItem = inputElement.value;
     let todoDate = dateElement.value;
     todoList.push({item : todoItem, dueDate : todoDate});
@@ -28,12 +29,10 @@ function displayItems() {
         let todoItem = todoList[i].item;
         let dueDate = todoList[i].dueDate;
         newHTML += `
-        <div>
-        <span>${item}</span>
+        <span>${todoItem}</span>
         <span>${dueDate}</span>
-        <button onClick="todoList.splice(${i}, 1);
+        <button class="btn-delete" onClick="todoList.splice(${i}, 1); // delete button
         displayItems();">Delete</button>
-        </div>
         `;
     }
     displayElement.innerHTML = newHTML;
